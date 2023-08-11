@@ -1,7 +1,7 @@
-# credit-card-transactions
+# Credit Card Transactions API
 This project involves a Spring Boot application for managing credit card transactions through a REST API. The application allows listing, filtering, and sorting credit card transactions using various features.
 
-## Get started
+## Getting Started
 
 ### Clone the repo
 
@@ -28,20 +28,16 @@ cd credit-card-transactions
 - Spring Data (Mock Repository)
 - Maven
 
-## Installation
+## Installation & Run
 
 1. Clone this repository to your local machine.
-2. Open the project in your favorite IDE (I used IntelliJ IDEA Community).
+2. Open the project in your preferred IDE (I used IntelliJ IDEA Community).
 3. Run the application using your IDE.
-
-### Development server
-
-To build the project using Maven and generate the executable JAR file, run the following command:
+4. Build the project using Maven and generate the executable JAR file, run the following command:
 
 ```shell
 mvn clean install
 ```
-
 The build artifacts will be stored in the target/ directory. You can run the JAR using the following command:
 
 ```shell
@@ -51,12 +47,44 @@ Shut it down manually with `Ctrl-C`.
 
 ## Usage
 
-Once the application is running, you can access the API through the following endpoints (e.g. Postman):
+Once the application is running, you can access the API through the following endpoints (e.g. test API's using Postman):
 
 - `GET /v1/api/transactions`: Get the list of all transactions.
 - `GET /v1/api/transactions/filter`: Filter transactions by amount, merchant, and status.
 - `GET /v1/api/transactions/sort`: Sort transactions by amount (ascending by default).
 - `GET /v1/api/transactions/sort-property`: Sort transactions by transaction property (amount, merchant, status).
+
+## Example Usage
+
+### Get All Transactions
+
+Send a GET request to `http://localhost:8080/v1/api/transactions` to retrieve a list of all transactions.
+
+### Filter Transactions
+
+Send a GET request to `http://localhost:8080/v1/api/transactions/filter` with query parameters for filtering:
+
+- `amount`: Filter by transaction amount.
+- `merchant`: Filter by merchant name.
+- `status`: Filter by transaction status (approved, refused, pending).
+
+For example:
+```shell
+http://localhost:8080/v1/api/transactions/filter?amount=100.0&merchant=Amazon&status=approved
+```
+
+### Sort Transactions by Property
+
+Send a GET request to `http://localhost:8080/v1/api/transactions/sort-property` with query parameters for sorting:
+
+- `sortProperty`: Property to sort by (amount, merchant, status).
+- `sortDirection`: Sorting direction (asc or desc).
+
+For example:
+```shell
+[http://localhost:8080/v1/api/transactions/filter?amount=100.0&merchant=Amazon&status=approved](http://localhost:8080/v1/api/transactions/sort-property?sortProperty=amount&sortDirection=asc
+)
+```
 
 ## Testing
 
