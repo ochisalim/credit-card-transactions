@@ -82,8 +82,7 @@ Send a GET request to `http://localhost:8080/v1/api/transactions/sort-property` 
 
 For example:
 ```shell
-[http://localhost:8080/v1/api/transactions/filter?amount=100.0&merchant=Amazon&status=approved](http://localhost:8080/v1/api/transactions/sort-property?sortProperty=amount&sortDirection=asc
-)
+http://localhost:8080/v1/api/transactions/sort-property?sortProperty=amount&sortDirection=asc
 ```
 
 ## Testing
