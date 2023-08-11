@@ -1,5 +1,4 @@
 # credit-card-transactions
-This project was generated with Spring boot version 2.7.14 and Java version 11.
 This project involves a Spring Boot application for managing credit card transactions through a REST API. The application allows listing, filtering, and sorting credit card transactions using various features.
 
 ## Get started
