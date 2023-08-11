@@ -31,17 +31,8 @@ cd credit-card-transactions
 ## Installation
 
 1. Clone this repository to your local machine.
-2. Open the project in your favorite IDE.
-3. Run the application using Spring Boot.
-
-## Usage
-
-Once the application is running, you can access the API through the following endpoints (e.g. Postman):
-
-- `GET /v1/api/transactions`: Get the list of all transactions.
-- `GET /v1/api/transactions/filter`: Filter transactions by amount, merchant, and status.
-- `GET /v1/api/transactions/sort`: Sort transactions by amount (ascending by default).
-- `GET /v1/api/transactions/sort-property`: Sort transactions by transaction property (amount, merchant, status).
+2. Open the project in your favorite IDE (I used IntelliJ IDEA Community).
+3. Run the application using your IDE.
 
 ### Development server
 
@@ -57,6 +48,15 @@ The build artifacts will be stored in the target/ directory. You can run the JAR
 java -jar target/enretien-back-0.0.1-SNAPSHOT.jar
 ```
 Shut it down manually with `Ctrl-C`.
+
+## Usage
+
+Once the application is running, you can access the API through the following endpoints (e.g. Postman):
+
+- `GET /v1/api/transactions`: Get the list of all transactions.
+- `GET /v1/api/transactions/filter`: Filter transactions by amount, merchant, and status.
+- `GET /v1/api/transactions/sort`: Sort transactions by amount (ascending by default).
+- `GET /v1/api/transactions/sort-property`: Sort transactions by transaction property (amount, merchant, status).
 
 ## Testing
 
