@@ -31,7 +31,7 @@ cd credit-card-transactions
 ## Installation & Run
 
 1. Clone this repository to your local machine.
-2. Open the project in your preferred IDE (e.g. IntelliJ IDEA Community Edition).
+2. Open the project in your preferred IDE (e.g., IntelliJ IDEA Community Edition).
 3. Run the application using your IDE.
 4. Alternatively, you can build the project using Maven and generate an executable JAR file. In your terminal, execute the following command:
 
