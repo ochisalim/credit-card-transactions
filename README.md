@@ -14,7 +14,7 @@ cd credit-card-transactions
 
 - **List Transactions**: The API provides an endpoint to retrieve the list of credit card transactions.
 - **Filtering**: Transactions can be filtered by amount, merchant, and status (approved, refused, pending).
-- **Sorting**: Transactions can be sorted by amount, merchant, or status (amount by default).
+- **Sorting**: Transactions can be sorted by amount, merchant, or status.
 - **Pagination**: Transactions can be paginated by `page` and `size` query parameters through the transaction list.
 
 ## Data Source
@@ -41,7 +41,7 @@ mvn clean install
 The build artifacts will be stored in the target/ directory. You can run the JAR file with:
 
 ```shell
-java -jar target/enretien-back-0.0.1-SNAPSHOT.jar
+java -jar target/credit-card-transactions-0.0.1-SNAPSHOT.jar
 ```
 Shut it down manually with `Ctrl-C`.
 
@@ -52,7 +52,7 @@ Once the application is running, you can access the API through the following en
 - `GET /v1/api/transactions`: Get the list of all transactions.
 - `GET /v1/api/transactions/filter`: Filter transactions by amount, merchant, and status 
 - `GET /v1/api/transactions/sort-page`: Sort and paginate transactions by page and size (ascending by default).
-- `GET /v1/api/transactions/sort-property`: Sort transactions by transaction property (amount, merchant, status) (default sorting by amount).
+- `GET /v1/api/transactions/sort-property`: Sort transactions by transaction property (amount, merchant, status) (default sorting by amount) (ascending by default).
 
 ## Example Usage
 
@@ -90,7 +90,7 @@ http://localhost:8080/v1/api/transactions/sort-page?sortDirection=desc&page=1&si
 
 Send a GET request to `http://localhost:8080/v1/api/transactions/sort-property` with query parameters for sorting:
 
-- `sortProperty`: Property to sort by (amount, merchant, status) (default sorting by amount).
+- `sortProperty`: Property to sort by (amount, merchant, status).
 - `sortDirection`: Sorting direction (asc or desc).
 
 For example:
