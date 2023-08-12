@@ -14,8 +14,8 @@ cd credit-card-transactions
 
 - **List Transactions**: The API provides an endpoint to retrieve the list of credit card transactions.
 - **Filtering**: Transactions can be filtered by amount, merchant, and status (approved, refused, pending).
-- **Sorting**: Transactions can be sorted by amount, merchant, or status.
-- **Pagination**: Pagination is implemented using the `page` and `size` query parameters.
+- **Sorting**: Transactions can be sorted by amount, merchant, or status (amount by default).
+- **Pagination**: Transactions can be paginated by `page` and `size` query parameters through the transaction list.
 
 ## Data Source
 
@@ -31,14 +31,14 @@ cd credit-card-transactions
 ## Installation & Run
 
 1. Clone this repository to your local machine.
-2. Open the project in your preferred IDE (I used IntelliJ IDEA Community).
+2. Open the project in your preferred IDE (e.g. IntelliJ IDEA Community Edition).
 3. Run the application using your IDE.
-4. Build the project using Maven and generate the executable JAR file, run the following command:
+4. Alternatively, you can build the project using Maven and generate an executable JAR file. In your terminal, execute the following command:
 
 ```shell
 mvn clean install
 ```
-The build artifacts will be stored in the target/ directory. You can run the JAR using the following command:
+The build artifacts will be stored in the target/ directory. You can run the JAR file with:
 
 ```shell
 java -jar target/enretien-back-0.0.1-SNAPSHOT.jar
@@ -47,12 +47,12 @@ Shut it down manually with `Ctrl-C`.
 
 ## Usage
 
-Once the application is running, you can access the API through the following endpoints (e.g. test API's using Postman):
+Once the application is running, you can access the API through the following endpoints (To interact with the API, you can use tools like Postman):
 
 - `GET /v1/api/transactions`: Get the list of all transactions.
-- `GET /v1/api/transactions/filter`: Filter transactions by amount, merchant, and status.
-- `GET /v1/api/transactions/sort`: Sort transactions by amount (ascending by default).
-- `GET /v1/api/transactions/sort-property`: Sort transactions by transaction property (amount, merchant, status).
+- `GET /v1/api/transactions/filter`: Filter transactions by amount, merchant, and status 
+- `GET /v1/api/transactions/sort-page`: Sort and paginate transactions by page and size (ascending by default).
+- `GET /v1/api/transactions/sort-property`: Sort transactions by transaction property (amount, merchant, status) (default sorting by amount).
 
 ## Example Usage
 
@@ -73,16 +73,29 @@ For example:
 http://localhost:8080/v1/api/transactions/filter?amount=100.0&merchant=Amazon&status=approved
 ```
 
+### Sort Transactions
+
+Send a GET request to `http://localhost:8080/v1/api/transactions/sort-page` with query parameters for sorting pages :
+
+- `sortDirection`: Sorting direction (asc or desc).
+- `page`: Pagination page.
+- `size`: Number of transactions per page.
+
+For example:
+```shell
+http://localhost:8080/v1/api/transactions/sort-page?sortDirection=desc&page=1&size=5
+```
+
 ### Sort Transactions by Property
 
 Send a GET request to `http://localhost:8080/v1/api/transactions/sort-property` with query parameters for sorting:
 
-- `sortProperty`: Property to sort by (amount, merchant, status).
+- `sortProperty`: Property to sort by (amount, merchant, status) (default sorting by amount).
 - `sortDirection`: Sorting direction (asc or desc).
 
 For example:
 ```shell
-http://localhost:8080/v1/api/transactions/sort-property?sortProperty=amount&sortDirection=asc
+http://localhost:8080/v1/api/transactions/sort-property?sortProperty=status&sortDirection=asc
 ```
 
 ## Testing
